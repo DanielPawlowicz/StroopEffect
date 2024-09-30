@@ -1,7 +1,7 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 // 
 //   to do
-//    - checking if the answer is correct
+//    - starting right away
 //    - adding 1 points or 0 points
 //    - showing the score
 //    - timer
@@ -19,6 +19,10 @@ const Game = () => {
     const textRef = useRef(null);
 
     const verificationText = useRef(null);
+
+    useEffect(()=>{
+      renderRandomColor();
+    },[])
 
     const renderRandomColor = () => {
         let color;
