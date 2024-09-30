@@ -7,6 +7,7 @@ function App() {
 
   return (
     <>
+      <h1>Press the color that the text is coloured with</h1>
       <Game />
     </>
   )

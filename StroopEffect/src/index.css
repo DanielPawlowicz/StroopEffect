@@ -13,5 +13,23 @@
 
 .colorText{
     font-size: 40px;
+    font-weight: bold;
     text-align: center;
 }
+
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.verification{
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 100px;
+    animation-name: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+
