@@ -1,14 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react'
 // 
 //   to do
-//    - starting right away
-//    - adding 1 points or 0 points
-//    - showing the score
+//    - hello screen and starting game
+//    - restarting game
 //    - timer
 //    - user settings
 
 
-const Game = () => {
+const Game = ({good, setGood, bad, setBad, total, setTotal}) => {
 
     const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'różowy', 'fioletowy']
     const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'pink', 'purple'];
@@ -47,13 +46,17 @@ const Game = () => {
       verificationText.current.classList.remove('verification');
 
       if(currentColor === pressedColor) {
+        setGood((good) => good += 1);
         verificationText.current.innerHTML = "dobrze";
         verificationText.current.style.color = "green";
       }
       else {
         verificationText.current.innerHTML = "źle"
         verificationText.current.style.color = "red";
+        setBad((bad) => bad += 1);
       }
+
+      setTotal((total) => total += 1);
 
       void verificationText.current.offsetWidth;
       verificationText.current.classList.add('verification');
