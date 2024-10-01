@@ -3,6 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Game from './components/Game'
 import Welcome from './components/Welcome';
+import Score from './components/Score';
 
 function App() {
 
@@ -17,12 +18,10 @@ function App() {
   return (
     <>
       
-      {isStarted ? 
-        <>
-        <h2>Press the color that the text is coloured with</h2>
-        <h3><span className='good_score'>{scoreGood}</span> : <span className='bad_score'>{scoreBad}</span ></h3>
-        <h3>Total: {scoreTotal}</h3>
-        <Game good={scoreGood} setGood={setScoreGood} bad={scoreBad} setBad={setScoreBad} total={scoreTotal} setTotal={setScoreTotal} /> 
+      {isStarted 
+      ? <>
+          <Score good={scoreGood} bad={scoreBad} total={scoreTotal}/>
+          <Game setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} /> 
         </>
       : <Welcome setStarted={setIsStarted}/>}
       

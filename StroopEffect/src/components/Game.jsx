@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 //    - user settings
 
 
-const Game = ({good, setGood, bad, setBad, total, setTotal}) => {
+const Game = ({setGood, setBad, setTotal}) => {
 
     const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'różowy', 'fioletowy']
     const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'pink', 'purple'];
