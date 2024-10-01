@@ -1,3 +1,7 @@
+body {
+    overflow: hidden;
+}
+
 .colorButtonsContainer{
     text-align: center;
 }
@@ -84,4 +88,41 @@
     font-weight: bold;
     font-size: 1.5rem;
     margin: 10px;
+}
+
+.pause_button_container{
+    text-align: end;
+    margin: 20px;
+}
+
+.pause_button{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.paused{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.8);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align: center;
+    padding-top: 20vh;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.paused button{
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-weight: bold;
+    color: #333;
+}
+
+.paused button:hover{
+    transform: scale(110%);
 }
