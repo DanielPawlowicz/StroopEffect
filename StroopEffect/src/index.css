@@ -44,3 +44,25 @@
     font-size: 30px;
 }
 
+.welcome_container{
+    text-align: center;
+    margin-top: 35vh; 
+    font-size: 1.6rem;
+}
+
+.welcome_container button{
+    width: 150px;
+    height: 50px;
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.4);
+    cursor: pointer;
+    background-color: #449123;
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+    letter-spacing: 1px;
+}
+
+.welcome_container button:hover{
+    transform: scale(110%);
+}
