@@ -5,7 +5,7 @@ const Welcome = ({ setStarted }) => {
     <>
     <div className='welcome_container'>
       <h1>Stroop Game</h1>
-      <h3>Press the color that the text is coloured with</h3>
+      <h4>Press the color that the text is colored with</h4>
       <button onClick={() => setStarted((prev) => !prev)}>Start</button>
     </div>
     </>

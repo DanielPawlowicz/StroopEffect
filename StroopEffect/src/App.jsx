@@ -27,7 +27,7 @@ function App() {
         </>
       : <Welcome setStarted={setIsStarted}/>}
 
-      {isPaused && <PauseGame setPaused={setIsPaused} setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} setStarted={setIsStarted}/>}
+      {isPaused && <PauseGame setPaused={setIsPaused} setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} setStarted={setIsStarted} good={scoreGood} bad={scoreBad} total={scoreTotal} />}
       
       
     </>
