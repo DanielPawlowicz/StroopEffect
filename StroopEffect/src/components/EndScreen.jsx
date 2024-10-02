@@ -1,6 +1,6 @@
 import React from 'react'
 
-const EndScreen = ({ good, bad, total, setPaused, setStarted, resetScore, setShowEndScreen}) => {
+const EndScreen = ({ good, bad, total, setPaused, setStarted, resetScore, setShowEndScreen, timer}) => {
 
     const exitGame = () => {
         resetScore();
@@ -12,9 +12,10 @@ const EndScreen = ({ good, bad, total, setPaused, setStarted, resetScore, setSho
   return (
     <>
     <div className='end_score_container'>
-        <p className='end_good'>Good: {good}</p>
-        <p className='end_bad'>Bad: {bad}</p>
-        <p className='end_total'>Total: {total}</p>
+        <p>Time: &nbsp; <b>{timer}s</b></p>
+        <p className='end_good'>Good Answers: &nbsp; <b>{good}</b></p>
+        <p className='end_bad'>Bad Answers: &nbsp; <b>{bad}</b></p>
+        <p className='end_total'>Total Answers: &nbsp; <b>{total}</b></p>
         <br/>
         <button onClick={resetScore}>Start New Game</button><br/>
         <button onClick={exitGame}>Exit</button>

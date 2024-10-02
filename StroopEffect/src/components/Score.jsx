@@ -1,11 +1,10 @@
 import React from 'react'
 import {FaPause} from 'react-icons/fa'
-import Timer from './Timer'
 
-const Score = ({good, bad, total, setPaused, isPaused}) => {
+const Score = ({good, bad, total, setPaused, isPaused, timer}) => {
   return (
     <div className='score_container'>
-      <Timer isPaused={isPaused}/>
+        <h4>{timer}s</h4>
         <div className='pause_button_container'>
             <FaPause className="pause_button" onClick={() => setPaused(true)}/>
         </div>
