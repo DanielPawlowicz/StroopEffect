@@ -33,15 +33,11 @@ const Game = ({setGood, setBad, setTotal}) => {
       textRef.current.innerHTML = text;
       textRef.current.style.color = color;
 
-      // console.log(color+" "+text);
       setCurrentColor(color);
       setCurrentText(text);
     }
 
-    const verifyAnswer = (e, pressedColor) => {
-
-      console.log("pressed: "+pressedColor);
-      console.log("current: "+currentColor);
+    const verifyAnswer = (e, pressedColor) => {;
 
       verificationText.current.classList.remove('verification');
 
