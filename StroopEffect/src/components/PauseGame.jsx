@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import EndScreen from './EndScreen';
 
-const PauseGame = ({ showEndScreen, setShowEndScreen, good, bad, total, resetScore, timer, exitGame }) => {
+const PauseGame = ({ showEndScreen, setShowEndScreen, good, bad, total, resetScore, timer, exitGame, setPaused, initialTimer }) => {
 
     const endGame = () => {
         setShowEndScreen(true);
@@ -11,7 +11,7 @@ const PauseGame = ({ showEndScreen, setShowEndScreen, good, bad, total, resetSco
     <>
     {
       showEndScreen 
-          ? <EndScreen good={good} bad={bad} total={total} resetScore={resetScore} timer={timer} exitGame={exitGame}/> 
+          ? <EndScreen good={good} bad={bad} total={total} resetScore={resetScore} initialTimer={initialTimer} exitGame={exitGame}/> 
       : <>
           <div className='paused'>
               <h6>Time: {timer}s</h6>

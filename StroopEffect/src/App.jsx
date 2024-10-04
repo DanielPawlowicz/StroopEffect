@@ -15,9 +15,9 @@ function App() {
   const [isStarted, setIsStarted] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [timer, setTimer] = useState(60);
+  const [initialTimer, setInitialTimer] = useState(60);
   const [hasEnded, setHasEnded] = useState(false);
   const [showEndScreen, setShowEndScreen] = useState(false);
-
 
   useEffect(() => {
     let interval;
@@ -40,12 +40,13 @@ function App() {
     return () => clearInterval(interval);
   }, [isStarted, isPaused, timer]);
 
+  console.log(initialTimer);
 
   const resetScore = () => {
     setScoreGood(0);
     setScoreBad(0);
     setScoreTotal(0);
-    setTimer(5);
+    setTimer(initialTimer);
     setIsPaused(false);
     setHasEnded(false);
   };
@@ -66,9 +67,9 @@ function App() {
           good={scoreGood}
           bad={scoreBad}
           total={scoreTotal}
-          timer={timer}
           resetScore={resetScore}
           exitGame={exitGame}
+          initialTimer={initialTimer}
         />
       ) : isStarted ? (
         <>
@@ -83,7 +84,7 @@ function App() {
           <Game setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} />
         </>
       ) : (
-        <Welcome setStarted={setIsStarted} />
+        <Welcome setStarted={setIsStarted} setTimer={setTimer} setInitialTimer={setInitialTimer}/>
       )}
 
       {isPaused && (
@@ -97,6 +98,8 @@ function App() {
           resetScore={resetScore}
           setHasEnded={setHasEnded}
           exitGame={exitGame}
+          setPaused={setIsPaused}
+          initialTimer={initialTimer}
         />
       )}
     </>
