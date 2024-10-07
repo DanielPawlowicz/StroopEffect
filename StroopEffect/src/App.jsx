@@ -82,8 +82,8 @@ function App() {
             bad={scoreBad}
             total={scoreTotal}
             setPaused={setIsPaused}
-            isPaused={isPaused}
             timer={timer}
+            isVersion1={isVersion1}
           />
           <Game 
             setGood={setScoreGood} 
