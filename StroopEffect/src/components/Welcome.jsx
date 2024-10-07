@@ -1,6 +1,8 @@
 import React from 'react'
+import ukImage from '../assets/uk.png'
+import plImage from '../assets/pl.png'
 
-const Welcome = ({ setStarted, setTimer, setInitialTimer }) => {
+const Welcome = ({ setStarted, setTimer, setInitialTimer, isPolish, setIsPolish }) => {
 
 
   const timerSetup = (e) => {
@@ -13,6 +15,10 @@ const Welcome = ({ setStarted, setTimer, setInitialTimer }) => {
   return (
     <>
     <div className='welcome_container'>
+      <div className='language'>
+          <img src={plImage} className={isPolish ? '' : 'gray'} onClick={() => setIsPolish((prev) => !prev)}/>
+          <img src={ukImage} className={isPolish ? 'gray' : ''} onClick={() => setIsPolish((prev) => !prev)} />
+      </div>
       <h1>Stroop Game</h1>
       <h4>Press the color that the text is colored with</h4>
       <div className='duration_container'>

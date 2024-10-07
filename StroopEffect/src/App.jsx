@@ -18,6 +18,7 @@ function App() {
   const [initialTimer, setInitialTimer] = useState(60);
   const [hasEnded, setHasEnded] = useState(false);
   const [showEndScreen, setShowEndScreen] = useState(false);
+  const [isPolish, setIsPolish] = useState(true);
 
   useEffect(() => {
     let interval;
@@ -84,7 +85,7 @@ function App() {
           <Game setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} />
         </>
       ) : (
-        <Welcome setStarted={setIsStarted} setTimer={setTimer} setInitialTimer={setInitialTimer}/>
+        <Welcome setStarted={setIsStarted} setTimer={setTimer} setInitialTimer={setInitialTimer} isPolish={isPolish} setIsPolish={setIsPolish}/>
       )}
 
       {isPaused && (

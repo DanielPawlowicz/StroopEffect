@@ -1,5 +1,6 @@
 body {
     overflow: hidden;
+    background-color: #ddd;
 }
 
 .colorButtonsContainer{
@@ -162,5 +163,21 @@ body {
 
 .duration_input{
     width: 45px;
+}
+
+.language img{
+    padding: 5px;
+}
+
+.language img:hover{
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+.gray{
+    /* filter: brightness(100%); */
+    filter: grayscale(100%);
+    opacity: 0.4;
+    transform: scale(0.8);
 }
 
