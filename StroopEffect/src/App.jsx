@@ -40,7 +40,7 @@ function App() {
     return () => clearInterval(interval);
   }, [isStarted, isPaused, timer]);
 
-  console.log(initialTimer);
+  
 
   const resetScore = () => {
     setScoreGood(0);
