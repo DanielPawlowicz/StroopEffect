@@ -45,11 +45,11 @@ const Game = ({setGood, setBad, setTotal, isPolish}) => {
 
       if(currentColor === pressedColor) {
         setGood((good) => good += 1);
-        verificationText.current.innerHTML = "dobrze";
+        isPolish ? verificationText.current.innerHTML = "dobrze" : verificationText.current.innerHTML = "good";
         verificationText.current.style.color = "green";
       }
       else {
-        verificationText.current.innerHTML = "źle"
+        isPolish ? verificationText.current.innerHTML = "źle" : verificationText.current.innerHTML = "bad"
         verificationText.current.style.color = "red";
         setBad((bad) => bad += 1);
       }
