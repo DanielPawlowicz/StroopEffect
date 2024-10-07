@@ -19,6 +19,8 @@ function App() {
   const [hasEnded, setHasEnded] = useState(false);
   const [showEndScreen, setShowEndScreen] = useState(false);
   const [isPolish, setIsPolish] = useState(true);
+  const [isVersion1, setIsVersion1] = useState(true);
+  const [isVersionChoosen, setIsVersionChoosen] = useState(false);
 
   useEffect(() => {
     let interval;
@@ -58,6 +60,7 @@ function App() {
     setShowEndScreen(false);
     setIsPaused(false);
     setIsStarted(false);
+    setIsVersionChoosen(false);
   }
 
 
@@ -82,10 +85,24 @@ function App() {
             isPaused={isPaused}
             timer={timer}
           />
-          <Game setGood={setScoreGood} setBad={setScoreBad} setTotal={setScoreTotal} />
+          <Game 
+            setGood={setScoreGood} 
+            setBad={setScoreBad} 
+            setTotal={setScoreTotal} 
+          />
         </>
       ) : (
-        <Welcome setStarted={setIsStarted} setTimer={setTimer} setInitialTimer={setInitialTimer} isPolish={isPolish} setIsPolish={setIsPolish}/>
+            <Welcome 
+              setStarted={setIsStarted} 
+              setTimer={setTimer} 
+              setInitialTimer={setInitialTimer} 
+              isPolish={isPolish} 
+              setIsPolish={setIsPolish} 
+              isVersion1={isVersion1} 
+              setIsVersion1={setIsVersion1} 
+              isVersionChoosen={isVersionChoosen} 
+              setIsVersionChoosen={setIsVersionChoosen} 
+            />
       )}
 
       {isPaused && (
