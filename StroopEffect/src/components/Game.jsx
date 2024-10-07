@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 //    - user settings
 
 
-const Game = ({setGood, setBad, setTotal}) => {
+const Game = ({setGood, setBad, setTotal, isPolish}) => {
 
     const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'różowy', 'fioletowy']
     const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'pink', 'purple'];
@@ -28,7 +28,9 @@ const Game = ({setGood, setBad, setTotal}) => {
         let text;
 
       color = colorENG[Math.floor(Math.random() * colorENG.length)];
-      text = colorPL[Math.floor(Math.random() * colorPL.length)];
+      isPolish 
+        ? (text = colorPL[Math.floor(Math.random() * colorPL.length)]) 
+        : (text = colorENG[Math.floor(Math.random() * colorPL.length)])
 
       textRef.current.innerHTML = text;
       textRef.current.style.color = color;

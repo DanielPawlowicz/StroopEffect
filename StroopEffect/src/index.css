@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-color: #eee;
+    background-color: #fff;
 }
 
 .colorButtonsContainer{
@@ -20,6 +20,8 @@ body {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+    /* -webkit-text-stroke-width: 0.2px;
+    -webkit-text-stroke-color: gray; */
 }
 
 
@@ -51,8 +53,14 @@ body {
 
 .welcome_container{
     text-align: center;
-    margin-top: 20vh; 
+    padding-top: 20vh; 
     font-size: 1.6rem;
+    background-color: #dedede;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .welcome_container button{
@@ -203,7 +211,7 @@ body {
 
 .choose_version_container p {
     margin: 10px;
-    width: 250px;
+    width: 350px;
     height: 100px;
     border: 0.5px solid gray;
     box-shadow: 0 0 10px silver;

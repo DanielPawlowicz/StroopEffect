@@ -89,6 +89,7 @@ function App() {
             setGood={setScoreGood} 
             setBad={setScoreBad} 
             setTotal={setScoreTotal} 
+            isPolish={isPolish}
           />
         </>
       ) : (
