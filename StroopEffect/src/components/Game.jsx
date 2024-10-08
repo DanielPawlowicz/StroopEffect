@@ -7,7 +7,7 @@ import React, { useEffect, useRef, useState } from 'react'
 //    - user settings
 
 
-const Game = ({setGood, setBad, setTotal, isPolish}) => {
+const Game = ({setGood, setBad, setTotal, isPolish, isVersion1}) => {
 
     const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'różowy', 'fioletowy']
     const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'pink', 'purple'];
@@ -26,33 +26,56 @@ const Game = ({setGood, setBad, setTotal, isPolish}) => {
     const renderRandomColor = () => {
         let color;
         let text;
+        let textEng;
+        let textRandomNumber;
 
       color = colorENG[Math.floor(Math.random() * colorENG.length)];
-      isPolish 
-        ? (text = colorPL[Math.floor(Math.random() * colorPL.length)]) 
-        : (text = colorENG[Math.floor(Math.random() * colorPL.length)])
+      textRandomNumber = Math.floor(Math.random() * colorPL.length);
+      
+      if(isPolish){
+        text = colorPL[textRandomNumber];
+        textEng = colorENG[textRandomNumber];
+        setCurrentText(textEng);
+      } else{
+        text = colorENG[textRandomNumber];
+        setCurrentText(text);
+      }
+
+      setCurrentColor(color);
 
       textRef.current.innerHTML = text;
       textRef.current.style.color = color;
 
-      setCurrentColor(color);
-      setCurrentText(text);
     }
 
     const verifyAnswer = (e, pressedColor) => {;
 
       verificationText.current.classList.remove('verification');
 
-      if(currentColor === pressedColor) {
-        setGood((good) => good += 1);
-        isPolish ? verificationText.current.innerHTML = "dobrze" : verificationText.current.innerHTML = "good";
-        verificationText.current.style.color = "green";
+      if(isVersion1){
+        if(currentColor === pressedColor) {
+          setGood((good) => good += 1);
+          isPolish ? verificationText.current.innerHTML = "dobrze" : verificationText.current.innerHTML = "good";
+          verificationText.current.style.color = "green";
+        }
+        else {
+          isPolish ? verificationText.current.innerHTML = "źle" : verificationText.current.innerHTML = "bad"
+          verificationText.current.style.color = "red";
+          setBad((bad) => bad += 1);
+        }
+      } else {
+        if (currentText === pressedColor) {
+          setGood((good) => good += 1);
+          isPolish ? verificationText.current.innerHTML = "dobrze" : verificationText.current.innerHTML = "good";
+          verificationText.current.style.color = "green";
+        }
+        else {
+          isPolish ? verificationText.current.innerHTML = "źle" : verificationText.current.innerHTML = "bad"
+          verificationText.current.style.color = "red";
+          setBad((bad) => bad += 1);
+        }
       }
-      else {
-        isPolish ? verificationText.current.innerHTML = "źle" : verificationText.current.innerHTML = "bad"
-        verificationText.current.style.color = "red";
-        setBad((bad) => bad += 1);
-      }
+
 
       setTotal((total) => total += 1);
 

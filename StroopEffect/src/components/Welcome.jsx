@@ -19,8 +19,8 @@ const Welcome = ({ setStarted, setTimer, setInitialTimer, isPolish, setIsPolish,
 
     <div className='welcome_container'>
       <div className='language'>
-          <img src={plImage} className={isPolish ? '' : 'gray'} onClick={() => setIsPolish((prev) => !prev)}/>
-          <img src={ukImage} className={isPolish ? 'gray' : ''} onClick={() => setIsPolish((prev) => !prev)} />
+          <img src={plImage} className={isPolish ? '' : 'gray'} onClick={() => setIsPolish(true)}/>
+          <img src={ukImage} className={isPolish ? 'gray' : ''} onClick={() => setIsPolish(false)} />
       </div>
       <h1>Stroop Game</h1>
         {isVersion1 ? <h4>Press the color that the text is colored with</h4> : <h4>Press the color that the text describes</h4>}
