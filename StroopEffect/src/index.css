@@ -1,6 +1,6 @@
 body {
     overflow: hidden;
-    background-color: #fff;
+    background-color: white;
 }
 
 .colorButtonsContainer{
@@ -20,6 +20,8 @@ body {
     font-size: 40px;
     font-weight: bold;
     text-align: center;
+    text-shadow: 0 0 50px rgba(0,0,0,1);
+    /* background-color: ; */
     /* -webkit-text-stroke-width: 0.2px;
     -webkit-text-stroke-color: gray; */
 }

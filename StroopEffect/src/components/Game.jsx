@@ -9,8 +9,8 @@ import React, { useEffect, useRef, useState } from 'react'
 
 const Game = ({setGood, setBad, setTotal, isPolish, isVersion1}) => {
 
-    const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'różowy', 'fioletowy']
-    const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'pink', 'purple'];
+    const colorPL = ['czarny', "czerwony", "zielony", "żółty", "pomarańczowy", 'niebieski', 'fioletowy']
+    const colorENG = ['black', 'red', 'green', 'yellow', 'orange', 'blue', 'purple'];
 
     const [currentColor, setCurrentColor] = useState(null); 
     const [currentText, setCurrentText] = useState(null); 
